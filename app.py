@@ -56,7 +56,7 @@ if(selected == 'Home'):
             st.write("[My LinkedIn >](https://www.linkedin.com/in/srijay-deshpande-6933b061/)")
         with right_column:
             st.image(img_srijay)
-            st.write("This snapshot was taken amidst our expedition to the domain of Fire & Ice")
+            st.write("This snapshot was taken amidst my expedition to the land of Fire & Ice")
 
     # ---- WHAT I DO ----
     with st.container():
@@ -73,7 +73,7 @@ if(selected == 'Home'):
                 - During leisure, I like to engage in a game of Lawn Tennis
                 - Reading is something I love and often find solace in books
     
-                If this sounds interesting to you, consider subscribing my youtube channel, so you don’t miss any content.
+                If this sounds interesting to you, feel free to contact me and also consider subscribing my youtube channel, so you don’t miss any content.
                 """
             )
             st.write("[YouTube Channel >](https://www.youtube.com/channel/UCuc6wxUY7qFMQXKO7s_i3Aw)")
@@ -84,11 +84,10 @@ if(selected == 'Home'):
         st.write("---")
         left_column, right_column = st.columns(2)
         with left_column:
-            st.header("Illuminated Pinnacles in My Work")
+            st.header("Significant Experiences from My Journey")
             st.write("##")
             st.write(
                 """
-                Sharing significant experiences from my journey:
                 - Currently I am Research Fellow at the University of Warwick
                 - During my PhD, I focused on Generative AI for Computational Pathology, creating new deep generative models to generate realistic tissue images
                 - My tenure as a Data Scientist at Microsoft saw me making valuable contributions to the realm of Bing Ads Retrieval
