@@ -1,0 +1,195 @@
+import requests
+import streamlit as st
+from PIL import Image
+from streamlit_lottie import st_lottie
+from streamlit_option_menu import option_menu
+import base64
+
+# Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
+st.set_page_config(page_title="Srijay's Space", page_icon=":tiger:", layout="wide")
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+# Use local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+local_css("style/style.css")
+
+# ---- LOAD ASSETS ----
+lottie_coding1 = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_coding1 = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+img_contact_form = Image.open("images/yt_contact_form.png")
+img_lottie_animation = Image.open("images/yt_lottie_animation.png")
+img_srijay = Image.open("images/srijay.jpg")
+img_safron = Image.open("images/safron_sample.png")
+
+synclay_demo = open("images/synclay_demo.gif", "rb")
+
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Menu",
+        options=['Home', 'Research Exhibitions', 'Publications', 'Connect'],
+        icons=['house','book','envelope'], #From Bootstrap icons
+        menu_icon='cast',
+        default_index=0,
+    )
+
+if(selected == 'Home'):
+
+    # ---- HEADER SECTION ----
+    with st.container():
+        left_column, right_column = st.columns((1.5,1))
+        with left_column:
+            st.subheader("Honored Visitor, welcome to My Space! :smile:")
+            st.subheader("I am Srijay :wave: ")
+            st.title("A Passionate Researcher")
+            st.write(
+                "working with the vision of developing and nurturing innovative solutions that could transform the lives of people. With a strong foundation in modern machine learning, deep learning, computer vision, and AI-driven medical multi-gigapixel image analysis, I am focused on pioneering advancements in this field. I believe that AI has the potential to create an impact on the development of people and I am determined to drive the change that is needed."
+            )
+            st.write("[My LinkedIn >](https://www.linkedin.com/in/srijay-deshpande-6933b061/)")
+        with right_column:
+            st.image(img_srijay)
+            st.write("This snapshot was taken amidst our expedition to the domain of Fire & Ice")
+
+    # ---- WHAT I DO ----
+    with st.container():
+        st.write("---")
+        left_column, right_column = st.columns((2,1))
+        with left_column:
+            st.header("What I do")
+            st.write("##")
+            st.write(
+                """
+                - I train Machine Learning models on Large Datasets
+                - I enjoy Competitive Coding and find programming accompanied by a cup of coffee quite delightful
+                - I love to explore different parts of the world
+                - During leisure, I like to engage in a game of Lawn Tennis
+                - Reading is something I love and often find solace in books
+    
+                If this sounds interesting to you, consider subscribing my youtube channel, so you don’t miss any content.
+                """
+            )
+            st.write("[YouTube Channel >](https://www.youtube.com/channel/UCuc6wxUY7qFMQXKO7s_i3Aw)")
+        with right_column:
+            st_lottie(lottie_coding1, height=300, key="coding1")
+
+    with st.container():
+        st.write("---")
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.header("Illuminated Pinnacles in My Work")
+            st.write("##")
+            st.write(
+                """
+                Sharing significant experiences from my journey:
+                - Currently I am Research Fellow at the University of Warwick
+                - During my PhD, I focused on Generative AI for Computational Pathology, creating new deep generative models to generate realistic tissue images
+                - My tenure as a Data Scientist at Microsoft saw me making valuable contributions to the realm of Bing Ads Retrieval
+                - Throughout my masters at IIT-Bombay, I engaged in diverse projects centered around Natural Language Processing
+                - While interning at Amazon, I garnered extensive proficiency in Java and Ruby on Rails
+                - During my undergraduation at NIT-Nagpur, I gained proficiency in Computer Languages and Oracle Database
+                """
+            )
+            st.write("[Warwick Profile >](https://warwick.ac.uk/fac/sci/dcs/people/u1958717/)")
+        with right_column:
+            st.markdown("![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmJrZzh4dGFudTQxNnBnaHBmMHl3YzIwMHhwa3R6ZWV2a29rNDg5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LR4UZ731tZVkFDhOhu/giphy.gif)")
+
+if (selected == 'Research Exhibitions'):
+
+    st.title("Major Research Projects & Demos")
+
+    # ---- PROJECTS ----
+    with st.container():
+        st.write("---")
+        st.write("##")
+        st.subheader("SAFRON: Stitching Across the Frontier Network for Generating Colorectal Cancer Histology Images")
+        st.image(img_safron)
+
+    with st.container():
+        st.write(
+            """
+            A novel framework called SAFRON (Stitching Across the FROntier Network) to construct realistic, large high-resolution tissue images conditioned on input tissue component masks. We have used the proposed framework for generating, to the best of our knowledge, the largest-sized synthetic histology images to date (up to 11K × 8K pixels).
+            """
+        )
+        st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
+        st.write("[Code >](https://github.com/Srijay/SAFRON/)")
+        st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820/)")
+
+    st.write("---")
+    st.write("##")
+
+    with st.container():
+            st.subheader("SynCLay: Interactive Synthesis of Histology Images from Bespoke Cellular Layouts")
+            contents = synclay_demo.read()
+            data_url = base64.b64encode(contents).decode("utf-8")
+            synclay_demo.close()
+            st.markdown(
+                f'<img src="data:image/gif;base64,{data_url}"  width="900" height="450" alt="cat gif">',
+                unsafe_allow_html=True,
+            )
+    with st.container():
+            st.write(
+                """
+                An interactive framework called SynCLay (Synthesis from Cellular Layouts) that can construct realistic and high-quality histology images from user-defined cellular layouts along with annotated cellular boundaries. Tissue image generation based on bespoke cellular layouts through the proposed framework allows users to generate different histological patterns from arbitrary topological arrangement of different types of cells.
+                """
+            )
+            st.write("[Code >](https://github.com/Srijay/SynCLay-Framework)")
+            st.write("[Publication URL >](https://arxiv.org/abs/2212.13780/)")
+
+if (selected == 'Publications'):
+
+    st.title("Major Publications")
+    # ---- PROJECTS ----
+    with st.container():
+        st.write("---")
+        st.write("##")
+        st.write("Deshpande, Srijay, Fayyaz Minhas, Simon Graham, and Nasir Rajpoot. “SAFRON: Stitching across the frontier network for generating colorectal cancer histology images.” Medical image analysis 77 (2022): 102337.")
+        st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820)")
+        st.write("##")
+        st.write("Deshpande, Srijay, Muhammad Dawood, Fayyaz Minhas, and Nasir Rajpoot. “SynCLay: Interactive Synthesis of Histology Images from Bespoke Cellular Layouts.”(Accepted in Medical image analysis (2023)).")
+        st.write("[Publication URL >](https://arxiv.org/abs/2305.05006)")
+        st.write("##")
+        st.write("Pocock, Johnathan, Simon Graham, Quoc Dang Vu, Mostafa Jahanifar, Sri- jay Deshpande, Giorgos Hadjigeorghiou, Adam Shephard et al. “TIATool- box as an end-to-end library for advanced tissue image analytics.” Communi- cations medicine 2, no. 1 (2022): 120.")
+        st.write("[Publication URL >](https://www.nature.com/articles/s43856-022-00186-5)")
+        st.write("##")
+        st.write("Deshpande, Srijay, Violeta Kovacheva, Fayyaz Minhas, and Nasir Rajpoot. “Generative models for synthesis of colorectal cancer histology images.” In Biomedical Image Synthesis and Simulation, pp. 491-516. Academic Press, 2022")
+        st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/B9780128243497000293)")
+        st.write("##")
+        st.write("Thakare, Atul, Srijay Deshpande, Amit Kshirsagar, and Parag Deshpande. Mining Query Plans for Finding Candidate Queries and Sub-Queries for Materialized Views in BI Systems Without Cube Generation. Computing & Informatics 38, no. 2 (2019).")
+        st.write("[Publication URL >](https://www.cai.sk/ojs/index.php/cai/article/download/2019_2_473/961/03)")
+        st.write("##")
+        st.write("Bhushan, Alka, Umesh Bellur, Kuldeep Sharma, Srijay Deshpande, and Nandlal L. Sarda. Mining swarm patterns in sliding windows over moving object data streams. In Proceedings of the 25th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, pp. 1-4. 2017.")
+        st.write("[Publication URL >](https://dl.acm.org/doi/abs/10.1145/3139958.3139988)")
+
+if(selected == 'Connect'):
+
+    # st.title(selected)
+
+    # ---- CONTACT ----
+    with st.container():
+        # st.write("---")
+        st.header("Get In Touch With Me!")
+        st.write("##")
+
+        # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
+        contact_form = """
+        <form action="https://formsubmit.co/YOUR@MAIL.COM" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message here" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.markdown(contact_form, unsafe_allow_html=True)
+        with right_column:
+            st.empty()
