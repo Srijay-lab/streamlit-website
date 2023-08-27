@@ -73,10 +73,9 @@ if(selected == 'Home'):
                 - During leisure, I like to engage in a game of Lawn Tennis
                 - Reading is something I love and often find solace in books
     
-                If this sounds interesting to you, feel free to contact me and also consider subscribing my youtube channel, so you don’t miss any content.
+                If this sounds interesting to you, feel free to contact me.
                 """
             )
-            st.write("[YouTube Channel >](https://www.youtube.com/channel/UCuc6wxUY7qFMQXKO7s_i3Aw)")
         with right_column:
             st_lottie(lottie_coding1, height=300, key="coding1")
 
