@@ -32,14 +32,14 @@ img_safron = Image.open("images/safron_sample.png")
 
 synclay_demo = open("images/synclay_demo.gif", "rb")
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Menu",
-        options=['Home', 'Research Exhibitions', 'Publications', 'Connect'],
-        icons=['house','book','envelope'], #From Bootstrap icons
-        menu_icon='cast',
-        default_index=0,
-    )
+selected = option_menu(
+    menu_title=None,
+    options=['Home', 'Research Exhibitions', 'Publications', 'Connect'],
+    icons=['house', 'book', 'envelope'],  # From Bootstrap icons
+    # menu_icon='cast',
+    default_index=0,
+    orientation='horizontal'
+)
 
 if(selected == 'Home'):
 
