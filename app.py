@@ -53,7 +53,7 @@ if(selected == 'Home'):
                 "working with the vision of developing and nurturing innovative solutions that could transform the lives of people. With a strong foundation in modern machine learning, deep learning, computer vision, and AI-driven medical multi-gigapixel image analysis, I am focused on pioneering advancements in this field. I believe that AI has the potential to create an impact on the development of people and I am determined to drive the change that is needed."
             )
             st.write("[My LinkedIn >](https://www.linkedin.com/in/srijay-deshpande-6933b061/)")
-            st.write("[My CV >](https://www.linkedin.com/in/srijay-deshpande-6933b061/overlay/1635537751060/single-media-viewer/?profileId=ACoAAA0M8s8BRQVoFOawsvTDrUoNUh5YobbQpsA/)")
+            st.write("[My CV >](https://github.com/Srijay/streamlit-website/blob/main/Srijay_CV.pdf/)")
         with right_column:
             st.image(img_srijay)
             st.write("This snapshot was taken amidst my expedition to the land of Fire & Ice")
