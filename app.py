@@ -49,7 +49,7 @@ if(selected == 'Home'):
         with left_column:
             st.subheader("Honored Visitor, welcome to My Space! :smile:")
             st.subheader("I am Srijay :wave: ")
-            st.title("A Passionate Researcher")
+            st.title("An AI Professional")
             st.write(
                 "working with the vision of developing and nurturing innovative solutions that could transform the lives of people. With a strong foundation in modern machine learning, deep learning, computer vision, and AI-driven medical multi-gigapixel image analysis, I am focused on pioneering advancements in this field. I believe that AI has the potential to create an impact on the development of people and I am determined to drive the change that is needed."
             )
