@@ -48,9 +48,9 @@ if(selected == 'Home'):
         with left_column:
             st.subheader("Honored Visitor, welcome to My Space! :smile:")
             st.subheader("I am Srijay :wave: ")
-            st.title("A Passionate AI Professional")
+            st.title("A Machine Learning Scientist")
             st.write(
-                "working with the vision of developing and nurturing innovative solutions that could transform the lives of people. With a strong foundation in modern machine learning, deep learning, computer vision, and AI-driven medical multi-gigapixel image analysis, I am focused on pioneering advancements in this field. I believe that AI has the potential to create an impact on the development of people and I am determined to drive the change that is needed."
+                "with a proven track record of over 5 years in machine learning, deep learning, and computer vision, focusing on pioneering advancements in this field. During my tenure at the University of Warwick, I spearheaded the development of computer-vision based solutions in the domain of computational pathology and implemented cutting-edge Generative AI algorithms for tissue image generation. The results of this work were published in top-tier conferences and journals. As a Data Scientist at Microsoft, I collaborated with the Bing Ads team to improve the information retrieval performance of sponsored search by developing novel NLP techniques. My internship at Amazon further strengthened my software development skills. I am adept at learning quickly, adapting to changing circumstances, and working both independently and collaboratively."
             )
             st.write("[My LinkedIn >](https://www.linkedin.com/in/srijay-deshpande-6933b061/)")
             st.write("[My CV >](https://github.com/Srijay/streamlit-website/blob/main/Srijay_CV.pdf/)")
@@ -67,7 +67,7 @@ if(selected == 'Home'):
             st.write("##")
             st.write(
                 """
-                - I train Machine Learning models on Large Datasets
+                - I train Machine Learning models/ Large Language Models on Large Datasets
                 - I enjoy Competitive Coding and find programming accompanied by a cup of coffee quite delightful
                 - I love to explore different parts of the world
                 - During leisure, I like to engage in a game of Lawn Tennis
