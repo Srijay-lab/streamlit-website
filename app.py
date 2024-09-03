@@ -116,10 +116,11 @@ if (selected == 'Research Exhibitions'):
             A novel framework called SAFRON (Stitching Across the FROntier Network) to construct realistic, large high-resolution tissue images conditioned on input tissue component masks. We have used the proposed framework for generating, to the best of our knowledge, the largest-sized synthetic histology images to date (up to 11K × 8K pixels).
             """
         )
-        st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
+        
+        st.write("[Try Demo >](https://huggingface.co/spaces/srijaydeshpande/SAFRON)")
         st.write("[Code >](https://github.com/Srijay/SAFRON/)")
         st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820/)")
-        st.write("[Try Demo >](https://huggingface.co/spaces/srijaydeshpande/SAFRON)")
+        st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
 
     st.write("---")
     st.write("##")
