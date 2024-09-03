@@ -119,6 +119,7 @@ if (selected == 'Research Exhibitions'):
         st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
         st.write("[Code >](https://github.com/Srijay/SAFRON/)")
         st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820/)")
+        st.write("[Try Demo >](https://huggingface.co/spaces/srijaydeshpande/SAFRON)")
 
     st.write("---")
     st.write("##")
