@@ -28,6 +28,7 @@ img_contact_form = Image.open("images/yt_contact_form.png")
 img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 img_srijay = Image.open("images/srijay.jpg")
 img_safron = Image.open("images/safron_sample.png")
+img_diffusion = Image.open("images/diffusion.png")
 
 synclay_demo = open("images/synclay_demo.gif", "rb")
 
@@ -121,6 +122,25 @@ if (selected == 'Research Exhibitions'):
         st.write("[Code >](https://github.com/Srijay/SAFRON/)")
         st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820/)")
         st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
+
+    st.write("---")
+    st.write("##")
+
+    with st.container():
+        st.write("---")
+        st.write("##")
+        st.subheader("Latent Diffusion Model + Pix2pixHD based Annotated Colon Cancer Image Generation")
+        st.image(img_diffusion)
+
+    with st.container():
+        st.write(
+            """
+            A latent diffusion based model to create annotated colon cancer histology images.
+            """
+        )
+        
+        st.write("[Try Demo >](https://huggingface.co/spaces/srijaydeshpande/DiffusionGenerator)")
+        st.write("[Publication URL >](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12933/129330H/Synthesis-of-annotated-colon-cancer-tissue-images-from-gland-layout/10.1117/12.3006927.short)")
 
     st.write("---")
     st.write("##")
