@@ -29,6 +29,7 @@ img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 img_srijay = Image.open("images/srijay.jpg")
 img_safron = Image.open("images/safron_sample.png")
 img_diffusion = Image.open("images/diffusion.png")
+img_spadesegresnet = Image.open("images/spadesegresnet.png")
 
 synclay_demo = open("images/synclay_demo.gif", "rb")
 
@@ -122,6 +123,26 @@ if (selected == 'Research Exhibitions'):
         st.write("[Code >](https://github.com/Srijay/SAFRON/)")
         st.write("[Publication URL >](https://www.sciencedirect.com/science/article/abs/pii/S1361841521003820/)")
         st.write("[Project Website >](https://warwick.ac.uk/fac/cross_fac/tia/projects/safron//)")
+
+    st.write("---")
+    st.write("##")
+
+    with st.container():
+        st.write("---")
+        st.write("##")
+        st.subheader("SPADESegResNet: Harnessing Spatially-Adaptive Normalization for Breast Cancer Semantic Segmentation")
+        st.image(img_spadesegresnet)
+
+    with st.container():
+        st.write(
+            """
+            The SPADESegResNet model, which leverages the power of spatially adaptive normalization layers for classifying image pixels into distinct tissue regions. The model effectively segments breast cancer tissue regions while preserving finer details.
+            """
+        )
+        
+        st.write("[Try Demo >](https://huggingface.co/spaces/srijaydeshpande/SPADESegResNet)")
+        st.write("[Code >](https://github.com/Srijay/SPADESegResNet)")
+        st.write("[Publication URL >](https://link.springer.com/chapter/10.1007/978-3-031-66955-2_24)")
 
     st.write("---")
     st.write("##")
